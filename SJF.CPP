@@ -94,3 +94,7 @@ int main() {
 
     return 0;
 }
+//tat=ct-at
+//wt=tat-bt
+//burst time  less will come first 
+//3,4 4,2 2,1 4,4 

@@ -2,8 +2,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <vector>
-#include <queue>
-#include<climits>
+#include <climits>
 using namespace std;
 
 int pageFaults(const vector<int>& pages, int capacity) {
@@ -17,7 +16,6 @@ int pageFaults(const vector<int>& pages, int capacity) {
 
         if (memory.find(page) != memory.end()) {
             pagehits++;
-            cout << "Page " << page << " page hit. Memory: ";
         } else {
             if (memory.size() < capacity) {
                 memory.insert(page);
@@ -31,21 +29,22 @@ int pageFaults(const vector<int>& pages, int capacity) {
                 }
                 memory.erase(lru_page);
                 memory.insert(page);
-                cout << "Page " << lru_page << " replaced by " << page << ". Memory: ";
                 pagefaults++;
             }
         }
         
         indexes[page] = i;
-
-        for (int p : memory) {
-            cout << p << " ";
-        }
-        cout << endl;
     }
+
+    int totalRequests = pages.size();
+    double pageFaultRatio = static_cast<double>(pagefaults) / totalRequests;
+    double pageHitRatio = static_cast<double>(pagehits) / totalRequests;
 
     cout << "The number of Page Faults are: " << pagefaults << "\n";
     cout << "The number of Hits are: " << pagehits << "\n";
+    cout << "Page Fault Ratio: " << pageFaultRatio << "\n";
+    cout << "Page Hit Ratio: " << pageHitRatio << "\n";
+
     return pagefaults;
 }
 
@@ -69,3 +68,5 @@ int main() {
 
     return 0;
 }
+
+//7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1
