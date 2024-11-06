@@ -52,3 +52,5 @@ System.out.println("\nAverage waiting Time = " + awt + "\n");
 System.out.println("Average turnaround time = " + atat);
 }
 }
+//Burst times: 5, 5, 5, 5
+//Quantum time: 2
