@@ -97,4 +97,4 @@ int main() {
 //tat=ct-at
 //wt=tat-bt
 //burst time  less will come first 
-//3,4 4,2 2,1 4,4 
+//1,3 2,4 1,2 4,4
